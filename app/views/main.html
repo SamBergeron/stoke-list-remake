@@ -7,8 +7,13 @@
         <input type="text" class="form-control" ng-model="searchCriteria"></input>
       </div>
       <br/>
+      <p>Showing <span style="color: #337ab7;">{{entryNumber}}</span> posts |
+        <a ng-click="refreshFeed(50)">50</a> |
+        <a ng-click="refreshFeed(100)">100</a> |
+        <a ng-click="refreshFeed(200)">200</a>
+      </p>
       <accordion>
-        <accordion-group ng-repeat="entry in entries | filter:searchCriteria" heading="{{entry.title}}">
+        <accordion-group ng-repeat="entry in entries | filter:searchCriteria | limitTo:entryNumber" heading="{{entry.title}}">
            <accordion-heading>
              <span ng-bind-html="entry.title | highlight:searchCriteria">{{entry.title}}</span>
              <i class="glyphicon glyphicon-chevron-down pull-right"></i>
@@ -24,6 +29,11 @@
           </div>
         </accordion-group>
       </accordion>
+      <p>Showing <span style="color: #337ab7;">{{entryNumber}}</span> posts |
+        <a ng-click="refreshFeed(50)">50</a> |
+        <a ng-click="refreshFeed(100)">100</a> |
+        <a ng-click="refreshFeed(200)">200</a>
+      </p>
     </tab>
     <tab heading="Post item">
       <br/>

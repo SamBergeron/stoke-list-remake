@@ -10,11 +10,11 @@
 angular.module 'stokeRemakeApp'
   .factory 'Feeder', ($q, $log)->
 
-    getFeed: (url) ->
+    getFeed: (url, entryNumber) ->
       deffered = $q.defer()
 
       feed = new google.feeds.Feed(url)
-      feed.setNumEntries(20)
+      feed.setNumEntries(entryNumber)
       feed.load (result) ->
         if !result.error
           deffered.resolve(result.feed)
