@@ -11,15 +11,13 @@ angular.module 'stokeRemakeApp'
   .controller 'MainCtrl', ($scope, $log, Feeder)->
 
     stokePostUrl = 'http://list.thestoke.ca/posts.rss'
-    $scope.entryNumber = 50
 
     getPostId = (postUrl) ->
       re = /[0-9]{1,}/
       return re.exec(postUrl)
 
     $scope.refreshFeed = (num) ->
-      $scope.entryNumber = num
-      feedPromise = Feeder.getFeed(stokePostUrl, $scope.entryNumber)
+      feedPromise = Feeder.getFeed(stokePostUrl, num)
       feedPromise.then(
         (feed) ->
           $scope.entries = feed.entries
@@ -32,4 +30,8 @@ angular.module 'stokeRemakeApp'
         )
 
     #Initialize the feed with 50 posts
-    $scope.refreshFeed($scope.entryNumber)
+    $scope.refreshFeed(50)
+
+    $scope.$watch('filteredEntries', ()->
+      $log.info($scope.filteredEntries)
+      )
