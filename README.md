@@ -1,6 +1,8 @@
 # Stoke List remake
 
 A RSS feed reader for The Stoke List!
+Everyone wanted a search... so it's here (and basic)
+Hosted at [stoke-list.divshot.io](http://stoke-list.divshot.io)
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 
 ## Original
