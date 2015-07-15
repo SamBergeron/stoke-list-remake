@@ -16,6 +16,8 @@ angular.module 'stokeRemakeApp'
       re = /[0-9]{1,}/
       return re.exec(postUrl)
 
+    $scope.errUrl = '/images/placeholder.png'
+
     $scope.refreshFeed = (num) ->
       feedPromise = Feeder.getFeed(stokePostUrl, num)
       feedPromise.then(

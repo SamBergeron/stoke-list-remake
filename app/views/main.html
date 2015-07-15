@@ -18,10 +18,11 @@
              <span ng-bind-html="entry.title | highlight:searchCriteria">{{entry.title}}</span>
              <i class="glyphicon glyphicon-chevron-down pull-right"></i>
            </accordion-heading>
-           <div class="col-sm-3 col-xs-12">
-            <img class="pull-left" src="{{entry.thumbUrl}}"></img>
+           <div class="col-sm-3 hidden-xs">
+            <img class="pull-left" src="{{entry.thumbUrl}}" err-src="{{errUrl}}"></img>
           </div>
           <div class="col-sm-9 col-xs-12">
+            <img class="center visible-xs" src="{{entry.thumbUrl}}" err-src="">
             <p class="text-justify" ng-bind-html="entry.content | highlight:searchCriteria">{{entry.content}}</p>
             <p>Reply to:&nbsp;<a id="email" href="mailto:{{entry.mail}}">{{entry.mail}}&nbsp;</a>
               <a class="no-link" ng-href="{{entry.link}}"><i class="clipboard glyphicon glyphicon-share"></i></a>
