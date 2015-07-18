@@ -10,7 +10,7 @@
       <p>Showing <span style="color: #337ab7;">{{entries.length}}</span> posts |
         <a ng-click="refreshFeed(50)">50</a> |
         <a ng-click="refreshFeed(100)">100</a> |
-        <a ng-click="refreshFeed(200)">200</a>
+        <a ng-click="refreshFeed(200)">200</a> |
       </p>
       <accordion>
         <accordion-group ng-repeat="entry in entries | filter:searchCriteria" heading="{{entry.title}}">
@@ -30,10 +30,8 @@
           </div>
         </accordion-group>
       </accordion>
-      <p>Showing <span style="color: #337ab7;">{{entryNumber}}</span> posts |
-        <a ng-click="refreshFeed(50)">50</a> |
-        <a ng-click="refreshFeed(100)">100</a> |
-        <a ng-click="refreshFeed(200)">200</a>
+      <p>Showing <span style="color: #337ab7;">{{entries.length}}</span> posts |
+        <a ng-click="refreshFeed(entries.length + 50)">Load more</a>
       </p>
     </tab>
     <tab heading="Post item">
