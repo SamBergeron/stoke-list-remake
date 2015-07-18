@@ -4,16 +4,18 @@
       <br/>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-        <input type="text" class="form-control" ng-model="searchCriteria"></input>
+        <input type="text" class="form-control" ng-model="searchCriteria" placeholder="Search text here..."></input>
       </div>
       <br/>
       <p>Showing <span style="color: #337ab7;">{{entries.length}}</span> posts |
         <a ng-click="refreshFeed(50)">50</a> |
         <a ng-click="refreshFeed(100)">100</a> |
-        <a ng-click="refreshFeed(200)">200</a> |
+        <a ng-click="refreshFeed(200)">200</a>
+        <a class="pull-right" ng-click="toggleOpenAll()" tooltip="{{tooltipText}}">{{openOrClose}} all</a>
       </p>
-      <accordion>
-        <accordion-group ng-repeat="entry in entries | filter:searchCriteria" heading="{{entry.title}}">
+      <accordion close-others="!openAll">
+        <accordion-group ng-repeat="entry in entries | filter:searchCriteria" heading="{{entry.title}}"
+              is-open="openAll" >
            <accordion-heading>
              <span ng-bind-html="entry.title | highlight:searchCriteria">{{entry.title}}</span>
              <i class="glyphicon glyphicon-chevron-down pull-right"></i>

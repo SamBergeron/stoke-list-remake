@@ -18,6 +18,16 @@ angular.module 'stokeRemakeApp'
 
     $scope.errUrl = '/images/placeholder.png'
 
+    $scope.openAll = false
+    $scope.openOrClose = 'Open'
+    $scope.toggleOpenAll = () ->
+      $scope.openAll = !$scope.openAll
+      if($scope.openAll)
+        $scope.openOrClose = 'Close'
+      else $scope.openOrClose = 'Open'
+
+    $scope.tooltipText = 'This will only affect the boxes you haven\'t touched yet!'
+
     $scope.refreshFeed = (num) ->
       feedPromise = Feeder.getFeed(stokePostUrl, num)
       feedPromise.then(
