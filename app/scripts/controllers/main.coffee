@@ -43,7 +43,3 @@ angular.module 'stokeRemakeApp'
 
     #Initialize the feed with 50 posts
     $scope.refreshFeed(50)
-
-    $scope.$watch('filteredEntries', ()->
-      $log.info($scope.filteredEntries)
-      )
