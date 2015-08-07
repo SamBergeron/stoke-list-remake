@@ -7,7 +7,7 @@
         <input type="text" class="form-control" ng-model="searchCriteria" placeholder="Search text here..."></input>
       </div>
       <br/>
-      <p>Showing <span style="color: #337ab7;">{{entries.length}}</span> posts |
+      <p>Showing <span class="highlighted">{{entries.length}}</span> posts |
         <a ng-click="refreshFeed(50)">50</a> |
         <a ng-click="refreshFeed(100)">100</a> |
         <a ng-click="refreshFeed(200)">200</a>
@@ -32,7 +32,7 @@
           </div>
         </accordion-group>
       </accordion>
-      <p>Showing <span style="color: #337ab7;">{{entries.length}}</span> posts |
+      <p>Showing <span class="highlighted">{{entries.length}}</span> posts |
         <a ng-click="refreshFeed(entries.length + 50)">Load more</a>
       </p>
     </tab>
