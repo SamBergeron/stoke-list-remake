@@ -2,7 +2,7 @@
 
 - A RSS feed reader for The Stoke List!
 - Everyone wanted a search... so it's here (and basic)
-- Hosted at [stoke-list.divshot.io](http://stoke-list.divshot.io)
+- Hosted at [stoke-list.surge.sh](http://stoke-list.surge.sh)
 - This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 
 ## Original
